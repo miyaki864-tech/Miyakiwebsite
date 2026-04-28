@@ -1,0 +1,176 @@
+/* Admin tables: inventory, orders, collections, events */
+
+/* Inventory Table */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.inventory-table th {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    padding: 1rem;
+    border-bottom: 2px solid var(--text-color);
+    opacity: 0.4;
+}
+
+.inventory-table td {
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+    font-size: 1rem;
+}
+
+.inventory-table tbody tr {
+    transition: background-color 0.2s;
+}
+
+.inventory-table tbody tr:hover {
+    background-color: transparent;
+}
+
+.inventory-table tbody tr:hover td {
+    border-bottom-color: var(--text-color);
+}
+
+.thumb-img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 0;
+    filter: grayscale(100%);
+    transition: filter 0.4s ease;
+}
+
+.inventory-table tbody tr:hover .thumb-img {
+    filter: grayscale(0%);
+}
+
+.admin-table-state {
+    text-align: center;
+    opacity: 0.4;
+    padding: 3rem;
+}
+
+.admin-table-state--left {
+    text-align: left;
+}
+
+.admin-table-state--solid {
+    opacity: 1;
+}
+
+.admin-muted {
+    opacity: 0.35;
+}
+
+.inventory-copy-cell {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    max-width: 240px;
+}
+
+.inventory-copy-cell--compact {
+    max-width: 150px;
+}
+
+.order-date,
+.order-customer-line,
+.order-customer-address,
+.order-items {
+    font-size: 0.8rem;
+}
+
+.order-date {
+    opacity: 0.7;
+}
+
+.order-customer-name {
+    font-weight: 600;
+}
+
+.order-customer-line,
+.order-customer-address {
+    opacity: 0.6;
+}
+
+.order-customer-address {
+    margin-top: 4px;
+}
+
+.order-items {
+    margin-top: 8px;
+    color: var(--text-color);
+}
+
+.order-total {
+    font-size: 1.1rem;
+}
+
+.event-subtitle {
+    opacity: 0.45;
+}
+
+.event-status {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.event-status--upcoming {
+    color: var(--success-color);
+}
+
+.event-status--cancelled {
+    color: var(--danger-color);
+}
+
+.event-status--past {
+    color: #888;
+}
+
+.action-btns {
+    white-space: nowrap;
+}
+
+.action-btns .btn-action {
+    margin-right: 1rem;
+}
+
+.action-btns .btn-action:last-child {
+    margin-right: 0;
+}
+
+.btn-action {
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.2s;
+    opacity: 0.4;
+}
+
+.btn-action::before { content: '[ '; }
+.btn-action::after { content: ' ]'; }
+
+.btn-action:hover {
+    opacity: 1;
+    color: var(--text-color);
+}
+
+.btn-delete:hover {
+    opacity: 1;
+    color: var(--danger-color);
+}

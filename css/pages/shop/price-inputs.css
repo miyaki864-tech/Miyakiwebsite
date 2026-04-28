@@ -1,0 +1,72 @@
+/* Shop: price inputs */
+
+/* ─── Price Range Inputs ────────────────────────── */
+.price-inputs-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.price-sep {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    opacity: 0.25;
+    padding-bottom: 0.5rem;
+    flex-shrink: 0;
+}
+
+.price-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.price-box-label {
+    font-family: var(--font-body);
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.3;
+}
+
+.price-box-inner {
+    display: flex;
+    align-items: baseline;
+    gap: 0.2rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+    padding-bottom: 0.4rem;
+}
+
+.price-box-inner:focus-within {
+    border-bottom-color: var(--text-color);
+}
+
+.price-currency {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    opacity: 0.4;
+    flex-shrink: 0;
+}
+
+.price-input {
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--text-color);
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+.price-input::-webkit-outer-spin-button,
+.price-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+

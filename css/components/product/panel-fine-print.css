@@ -1,0 +1,19 @@
+/* Product panel: fine print */
+
+/* ─── Fine Print ─────────────────────────────────── */
+.panel-fine-print {
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-color);
+    opacity: 0;
+    transition: opacity 0.5s ease 0.54s;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.product-detail-panel.active .panel-fine-print {
+    opacity: 0.25;
+}
+

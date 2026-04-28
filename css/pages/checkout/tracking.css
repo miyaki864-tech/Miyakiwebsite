@@ -1,0 +1,82 @@
+/* Tracking: confirmation page */
+
+.tracking-view {
+    display: flex;
+    flex-direction: column;
+}
+
+.tracking-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding-top: clamp(2rem, 6vw, 5rem);
+}
+
+.tracking-card {
+    width: min(100%, 820px);
+    padding: clamp(1.5rem, 5vw, 4rem);
+    border: 1px solid var(--border-color);
+    background: rgba(247, 246, 242, 0.04);
+}
+
+.tracking-card h1 {
+    margin: 0.75rem 0 1rem;
+    font-size: clamp(3rem, 9vw, 6rem);
+    line-height: 0.86;
+    text-transform: uppercase;
+}
+
+.tracking-copy {
+    max-width: 42rem;
+    margin-bottom: 2.5rem;
+    color: var(--muted-color);
+    line-height: 1.75;
+}
+
+.tracking-meta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tracking-meta-item {
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+}
+
+.tracking-meta-item span {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.tracking-meta-item strong {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+}
+
+.tracking-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+}
+
+.tracking-btn {
+    width: auto;
+    min-width: 220px;
+    margin-top: 0;
+}
+
+.tracking-btn-secondary {
+    background: transparent;
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+

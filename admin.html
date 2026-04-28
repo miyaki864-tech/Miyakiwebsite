@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Employee Dashboard | MIYAKI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+    <div class="dashboard-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="dashboard-sidebar">
+            <h1 class="brand-title">MIYAKI ADMIN</h1>
+            <nav class="dashboard-nav">
+                <button class="nav-btn active" id="nav-inventory">Inventory</button>
+                <button class="nav-btn" id="nav-collections">Collections</button>
+                <button class="nav-btn" id="nav-orders">Orders</button>
+                <button class="nav-btn" id="nav-events">Events</button>
+                <button class="nav-btn" id="nav-add">Add Product</button>
+                <button class="nav-btn" id="nav-logout">Log Out</button>
+                <a href="shop.html" class="nav-link">← Return to Shop</a>
+            </nav>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="dashboard-main">
+
+            <!-- COLLECTIONS VIEW -->
+            <section id="view-collections" class="dashboard-view">
+                <header class="view-header">
+                    <h2>Collections</h2>
+                    <p class="subtitle">Manage titles and editorial descriptions for product series.</p>
+                </header>
+                
+                <div class="table-container">
+                    <table class="inventory-table">
+                        <thead>
+                            <tr>
+                                <th>Series Name</th>
+                                <th>Editorial Description</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="collections-tbody">
+                            <tr><td colspan="3" class="admin-table-state">Loading collections…</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- EVENTS VIEW -->
+            <section id="view-events" class="dashboard-view">
+                <header class="view-header view-header--split">
+                    <div>
+                        <h2>Events</h2>
+                        <p class="subtitle">Schedule and manage exhibitions &amp; public events.</p>
+                    </div>
+                    <button class="submit-btn submit-btn--header" id="ev-new-btn">+ New Event</button>
+                </header>
+
+                <!-- Create / Edit Form (hidden by default) -->
+                <div id="ev-form-wrap" class="admin-event-form is-hidden">
+                    <h3 id="ev-form-title" class="admin-event-title">New Event</h3>
+                    <form id="ev-form" class="admin-event-grid">
+                        <input type="hidden" id="ev-id">
+
+                        <div class="form-group form-group--full">
+                            <label for="ev-title">Event Title *</label>
+                            <input type="text" id="ev-title" required placeholder="e.g. Material Dialogue — Kolkata">
+                        </div>
+                        <div class="form-group form-group--full">
+                            <label for="ev-subtitle">Subtitle / Theme</label>
+                            <input type="text" id="ev-subtitle" placeholder="e.g. A survey of dark stoneware">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ev-city">City *</label>
+                            <input type="text" id="ev-city" required placeholder="Kolkata">
+                        </div>
+                        <div class="form-group">
+                            <label for="ev-country">Country *</label>
+                            <input type="text" id="ev-country" required placeholder="India">
+                        </div>
+
+                        <div class="form-group form-group--full">
+                            <label for="ev-venue">Venue</label>
+                            <input type="text" id="ev-venue" placeholder="e.g. Gallery Rasa, Park Street">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ev-date-start">Start Date *</label>
+                            <input type="date" id="ev-date-start" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ev-date-end">End Date</label>
+                            <input type="date" id="ev-date-end">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ev-time">Time</label>
+                            <input type="text" id="ev-time" placeholder="18:00 – 21:00 IST">
+                        </div>
+                        <div class="form-group">
+                            <label for="ev-capacity">Capacity (0 = unlimited)</label>
+                            <input type="number" id="ev-capacity" value="0" min="0">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ev-status">Status</label>
+                            <select id="ev-status" class="admin-select">
+                                <option value="upcoming">Upcoming</option>
+                                <option value="past">Past</option>
+                                <option value="cancelled">Cancelled</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group form-group--full">
+                            <label for="ev-desc">Description</label>
+                            <textarea id="ev-desc" rows="4" placeholder="Tell visitors what to expect..."></textarea>
+                        </div>
+
+                        <div class="admin-form-actions">
+                            <button type="submit" class="submit-btn" id="ev-submit-btn">Save Event</button>
+                            <button type="button" id="ev-cancel-btn" class="admin-cancel-btn">Cancel</button>
+                        </div>
+                        <div id="ev-status-msg" class="admin-status-line"></div>
+                    </form>
+                </div>
+
+                <!-- Events Table -->
+                <div class="table-container">
+                    <table class="inventory-table" id="ev-table">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>City</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Bookings</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ev-tbody">
+                            <tr><td colspan="6" class="admin-table-state">Loading events…</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- INVENTORY VIEW -->
+            <section id="view-inventory" class="dashboard-view active">
+                <header class="view-header">
+                    <h2>Product Inventory</h2>
+                    <p class="subtitle">Manage and curate your collections.</p>
+                </header>
+                
+                <div class="table-container">
+                    <table class="inventory-table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Series</th>
+                                <th>Price</th>
+                                <th>Description</th>
+                                <th>Dimensions</th>
+                                <th>Items Included</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="inventory-tbody">
+                            <!-- Populated dynamically by admin.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- ORDERS VIEW -->
+            <section id="view-orders" class="dashboard-view">
+                <header class="view-header">
+                    <h2>Orders</h2>
+                    <p class="subtitle">Review customer orders and update shipping statuses.</p>
+                </header>
+                
+                <div class="table-container">
+                    <table class="inventory-table orders-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Date</th>
+                                <th>Customer & Details</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-tbody">
+                            <!-- Populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- PRODUCT FORM VIEW (ADD/EDIT) -->
+            <section id="view-form" class="dashboard-view">
+                <header class="view-header">
+                    <h2 id="form-title">Add New Product</h2>
+                    <p class="subtitle" id="form-subtitle">Upload a new piece to the catalog.</p>
+                </header>
+
+                <div class="form-container">
+                    <form id="productForm" enctype="multipart/form-data">
+                        <input type="hidden" id="formMode" value="add">
+                        <input type="hidden" id="productId" name="productId">
+                        <input type="hidden" id="existingImage" name="existingImage">
+
+                        <div class="form-group">
+                            <label for="productName">Product Name</label>
+                            <input type="text" id="productName" name="productName" required placeholder="e.g. Kyoto Matcha Bowl">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="productPrice">Price (Rs)</label>
+                            <input type="number" id="productPrice" name="productPrice" step="0.01" required placeholder="65.00">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="productSeries">Series</label>
+                            <select id="productSeries" name="productSeries" class="admin-select" required>
+                                <option value="" disabled selected>Select a collection...</option>
+                            </select>
+                            <input type="text" id="newProductSeries" name="newProductSeries" class="new-series-input is-hidden" placeholder="Enter new collection name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="productTags">Tags</label>
+                            <input type="text" id="productTags" name="productTags" placeholder="e.g. bottle, full plates, cups">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="productDescription">Product Description</label>
+                            <textarea class="form-textarea" id="productDescription" name="productDescription" rows="5" placeholder="Describe the piece for the product detail page and search."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="productSize">Dimensions</label>
+                            <input type="text" id="productSize" name="productSize" placeholder="e.g. 18 cm W x 9 cm H">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="productContents">Items Included</label>
+                            <textarea class="form-textarea" id="productContents" name="productContents" rows="5" placeholder="e.g. Includes one teapot, two cups, and a bamboo whisk."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="productImage">Product Image</label>
+                            <input type="file" id="productImage" name="productImage" accept="image/*">
+                            <p class="image-hint is-hidden" id="image-hint">Leave blank to keep the existing image.</p>
+                        </div>
+
+                        <button type="submit" class="submit-btn" id="submitBtn">Save Product</button>
+                        <div id="status-message"></div>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="delete-modal" class="modal-overlay">
+        <div class="modal">
+            <h3>Confirm Deletion</h3>
+            <p>Are you sure you want to delete <strong id="delete-target-name"></strong>?</p>
+            <div class="modal-actions">
+                <button class="btn btn-cancel" id="cancel-delete">Cancel</button>
+                <button class="btn btn-danger" id="confirm-delete">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+/* Admin mobile: responsive dashboard rules */
+
+@media (max-width: 900px) {
+    .dashboard-layout {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .dashboard-sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 2rem 1.25rem;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .brand-title {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .dashboard-nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.5rem;
+    }
+
+    .nav-btn,
+    .nav-link {
+        margin: 0;
+        padding: 0.85rem;
+        border-radius: 3px;
+    }
+
+    .nav-link {
+        grid-column: 1 / -1;
+        border-top: 1px dashed var(--border-color);
+        padding-top: 1rem;
+    }
+
+    .dashboard-main {
+        padding: 2rem 1.25rem 4rem;
+        overflow-x: hidden;
+    }
+
+    .view-header h2 {
+        font-size: 2rem;
+    }
+
+    .form-container {
+        max-width: none;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="file"],
+    select {
+        font-size: 1.35rem;
+    }
+
+    .form-textarea {
+        font-size: 0.95rem;
+    }
+
+    .inventory-table {
+        min-width: 760px;
+    }
+}

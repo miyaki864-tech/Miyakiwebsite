@@ -1,0 +1,13 @@
+/* Foundations: design tokens */
+
+/* ─── Design Tokens — Dark Mode Only ───────────── */
+:root {
+    --bg-color: #0f0f0f;
+    --text-color: #f2f0eb;
+    --accent-color: #a3998a;
+    --font-heading: 'Syne', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --inverse-bg: #fff;
+    --inverse-text: #000;
+}
+

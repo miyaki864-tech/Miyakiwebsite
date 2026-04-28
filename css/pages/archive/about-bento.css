@@ -1,0 +1,129 @@
+/* Archive: about bento cards */
+
+/* ─── About Bento Grid ───────────────────────────────────────────
+   Identical 4-col × 3-row grid to studio-bento.
+   Card placement:
+     Row 1: [decl 2col] [07 stat] [01 stat]
+     Row 2: [heritage 2col 2rows] [quote 2col]
+     Row 3: [heritage cont.] [manifesto] [about-cta]
+─────────────────────────────────────────────────────────────── */
+
+.about-bento {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 240px 320px 220px;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+/* ── CARD 1: Declaration — col 1–2, row 1 ── */
+.sb-card--decl {
+    grid-column: span 2;
+    grid-row: 1;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* Declaration title — mixed case, fills 2-col card without overflow */
+.sb-decl-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.2rem, 3.6vw, 4rem);
+    font-weight: 800;
+    text-transform: none;
+    letter-spacing: -0.04em;
+    line-height: 0.88;
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* ── CARD 4: Heritage image — col 1–2, rows 2–3 ── */
+.sb-card--heritage {
+    grid-column: span 2;
+    grid-row: 2 / 4;
+}
+
+/* ── CARD 6: Manifesto — col 3, row 3 ── */
+.sb-card--manifesto {
+    grid-column: span 1;
+    grid-row: 3;
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.sb-card--manifesto .sb-card-inner {
+    justify-content: space-between;
+}
+
+.sb-manifesto-body {
+    font-family: var(--font-body);
+    font-size: 0.74rem;
+    line-height: 1.65;
+    opacity: 0.5;
+    margin: 0;
+    overflow: hidden;
+}
+
+.sb-manifesto-body em {
+    font-style: italic;
+    opacity: 1;
+}
+
+.sb-manifesto-footnote {
+    font-family: var(--font-body);
+    font-size: 0.5rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0.22;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ── CARD 7: About CTA — col 4, row 3 ── */
+.sb-card--about-cta {
+    grid-column: span 1;
+    grid-row: 3;
+    background: var(--text-color);
+    border-color: transparent;
+}
+
+.sb-card--about-cta .sb-card-inner {
+    justify-content: space-between;
+}
+
+/* Giant statement fragment — inverted card */
+.sb-about-statement {
+    font-family: var(--font-heading);
+    font-size: clamp(1.3rem, 2.1vw, 2rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    line-height: 0.88;
+    color: var(--bg-color);
+    margin: 0;
+    opacity: 0.9;
+}
+
+.sb-about-cta-link {
+    font-family: var(--font-body);
+    font-size: 0.55rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--bg-color);
+    opacity: 0.5;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(15, 15, 15, 0.3);
+    padding-bottom: 0.2rem;
+    transition: opacity 0.3s ease, letter-spacing 0.3s ease;
+    white-space: nowrap;
+}
+
+.sb-about-cta-link:hover {
+    opacity: 0.9;
+    letter-spacing: 0.3em;
+}
+
+/* About CTA hover tint override (inverted card) */
+.sb-card--about-cta::after {
+    display: none;
+}
+

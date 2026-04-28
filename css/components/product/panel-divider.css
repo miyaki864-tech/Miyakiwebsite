@@ -1,0 +1,16 @@
+/* Product panel: divider */
+
+/* ─── Divider ────────────────────────────────────── */
+.product-panel-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(242, 240, 235, 0.08);
+    margin-bottom: 2rem;
+    opacity: 0;
+    transition: opacity 0.5s ease 0.35s;
+}
+
+.product-detail-panel.active .product-panel-divider {
+    opacity: 1;
+}
+

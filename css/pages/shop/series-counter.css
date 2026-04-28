@@ -1,0 +1,44 @@
+/* Shop: desktop series counter */
+
+/* ─── Series Counter — editorial style ───────────── */
+.series-counter {
+    position: absolute;
+    bottom: 3rem;
+    left: 4rem;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    pointer-events: none;
+}
+
+#series-current {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--text-color);
+    line-height: 1;
+}
+
+.series-counter-sep {
+    display: inline-block;
+    width: 32px;
+    height: 1px;
+    background: var(--text-color);
+    opacity: 0.25;
+    vertical-align: middle;
+    flex-shrink: 0;
+}
+
+#series-total {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    color: var(--text-color);
+    opacity: 0.35;
+    line-height: 1;
+    align-self: flex-end;
+    padding-bottom: 0.2rem;
+}
+

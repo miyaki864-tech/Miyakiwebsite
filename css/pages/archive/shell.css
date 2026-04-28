@@ -1,0 +1,133 @@
+/* Archive: shell and shared stage */
+
+/* ─── Archive Grid Layout (new Shop-mirrored design) ─ */
+
+
+
+/* Sidebar: flex column, search pinned to very bottom */
+.archive-sidebar {
+    background: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Static nav links */
+.archive-static-links {
+    flex: 0 0 auto;
+    overflow: visible;
+    -webkit-mask-image: none;
+    mask-image: none;
+    padding-bottom: 0;
+}
+
+/* Journal list grows to fill remaining space */
+.sidebar-journal-index {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    flex: 1;
+    padding-right: 0.5rem;
+    margin-top: 2rem;
+    scrollbar-width: none;
+}
+
+.sidebar-journal-index::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar-journal-item {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+    cursor: pointer;
+    transition: opacity 0.3s ease, padding-left 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    opacity: 0.5;
+    user-select: none;
+}
+
+.sidebar-journal-item:hover,
+.sidebar-journal-item.active-item {
+    opacity: 1;
+    padding-left: 0.75rem;
+}
+
+.sidebar-journal-item.active-item {
+    opacity: 1;
+    border-left: 2px solid var(--text-color);
+    padding-left: 0.6rem;
+}
+
+.sidebar-journal-empty {
+    padding: 1rem 0;
+    opacity: 0.3;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+/* Search pinned to bottom */
+.archive-search-bottom {
+    flex: 0 0 auto;
+    margin-top: auto !important;
+    border-top: 1px solid rgba(128, 128, 128, 0.15) !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 2rem !important;
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+/* Archive main stage */
+.archive-grid-viewport {
+    flex: 1;
+    height: calc(100vh - 5rem);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.archive-stage-inner {
+    height: auto;
+    min-height: 100%;
+    padding: 2.5rem 4rem 6rem 4rem;
+}
+
+/* ─── Porto Rocha World-Class Bespoke Stage ─────────── */
+.pr-bespoke-layout {
+    width: 100%;
+    position: relative;
+    padding-bottom: 0;
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.pr-stage-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 6vw, 8.5rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    color: var(--text-color);
+    margin: 0;
+    position: relative;
+}
+
+.pr-stage-body {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    line-height: 1.7;
+    max-width: 50ch;
+    opacity: 0.75;
+}
+
+.pr-stage-body p {
+    margin-bottom: 1.5rem;
+}
+

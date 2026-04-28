@@ -1,0 +1,51 @@
+/* Product panel: add to cart */
+
+/* ─── Add to Cart CTA ────────────────────────────── */
+.product-panel-add {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    padding: 0 2rem;
+    height: 3rem;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    border: 1px solid var(--text-color);
+    border-radius: 2px;
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.product-panel-add:hover {
+    background: transparent;
+    color: var(--text-color);
+}
+
+.product-panel-add:active {
+    transform: scale(0.98);
+}
+
+.add-label {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.add-arrow {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+    font-size: 1rem;
+}
+
+.product-panel-add:hover .add-arrow {
+    transform: translateX(4px);
+}
+

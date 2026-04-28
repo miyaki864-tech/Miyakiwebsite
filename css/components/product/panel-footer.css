@@ -1,0 +1,18 @@
+/* Product panel: footer */
+
+/* ─── CTA Footer ─────────────────────────────────── */
+.product-panel-footer {
+    display: flex;
+    gap: 0.75rem;
+    align-items: stretch;
+    margin-bottom: 1.25rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease 0.48s, transform 0.5s ease 0.48s;
+}
+
+.product-detail-panel.active .product-panel-footer {
+    opacity: 1;
+    transform: translateY(0);
+}
+

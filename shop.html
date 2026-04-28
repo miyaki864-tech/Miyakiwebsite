@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Shop Collection | MIYAKI</title>
+    <meta name="description"
+        content="Explore the Miyaki collection of artisan-crafted, wabi-sabi inspired ceramics and tableware.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Syne:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="shop-page">
+
+    <nav class="navbar solid-nav">
+        <div class="nav-links">
+            <a href="archive.html">Archive</a>
+        </div>
+        <a href="shop.html" class="logo">MIYAKI</a>
+        <div class="nav-actions">
+            <button type="button" class="nav-cart-trigger" id="cart-toggle">Cart (0)</button>
+            <span id="current-time"></span>
+        </div>
+    </nav>
+
+    <!-- The shop logic (js/shop.js) will dynamically inject the Series sidebar and Grid here -->
+    <main class="shop-main-layout" id="shop-root">
+    </main>
+
+    <!-- Product Detail Panel -->
+    <div class="product-panel-overlay" id="product-panel-overlay"></div>
+    <div class="product-detail-panel" id="product-detail-panel">
+
+        <!-- Close Trigger -->
+        <button class="product-panel-close" id="product-panel-close" aria-label="Close">
+            <span class="close-icon-bar"></span>
+            <span class="close-icon-bar"></span>
+        </button>
+
+        <!-- Left: Full-bleed image -->
+        <div class="product-panel-image-col">
+            <div class="product-panel-img-wrap">
+                <img src="" alt="" id="panel-product-image" class="product-panel-img">
+            </div>
+        </div>
+
+        <!-- Right: Info column -->
+        <div class="product-panel-info-col">
+
+            <!-- Product name -->
+            <h2 class="product-panel-name" id="panel-product-name"></h2>
+
+            <!-- Price + availability row -->
+            <div class="panel-price-row">
+                <p class="product-panel-price" id="panel-product-price"></p>
+                <span class="panel-availability">
+                    <span class="panel-availability-dot"></span>
+                    In Stock
+                </span>
+            </div>
+
+            <!-- Thin rule -->
+            <div class="product-panel-divider"></div>
+
+            <!-- Description -->
+            <p class="product-panel-description" id="panel-product-description"></p>
+
+            <!-- Dimensions -->
+            <section class="panel-detail-section" id="panel-size-section">
+                <p class="panel-section-label">Dimensions</p>
+                <p class="panel-content-copy" id="panel-product-size"></p>
+            </section>
+
+            <!-- Items Included -->
+            <section class="panel-detail-section" id="panel-content-section">
+                <p class="panel-section-label">Items Included</p>
+                <p class="panel-content-copy" id="panel-product-contents"></p>
+            </section>
+
+            <!-- Spacer -->
+            <div class="panel-spacer"></div>
+
+            <!-- CTA footer -->
+            <div class="product-panel-footer">
+                <div class="quantity-selector">
+                    <button class="qty-btn" id="qty-minus">−</button>
+                    <span class="qty-value" id="qty-value">1</span>
+                    <button class="qty-btn" id="qty-plus">+</button>
+                </div>
+                <button class="product-panel-add" id="panel-add-to-cart">
+                    <span class="add-label">Add to Cart</span>
+                    <span class="add-arrow">→</span>
+                </button>
+            </div>
+
+            <!-- Fine print -->
+            <p class="panel-fine-print">Free shipping on orders over Rs 200 · Easy returns within 14 days</p>
+        </div>
+    </div>
+
+    <!-- Hidden Employee Login Overlay (triggered by Konami Code: ↑↑↓↓←→←→) -->
+    <div id="konami-overlay" class="konami-overlay">
+        <div class="konami-card">
+            <button id="konami-close" class="konami-close" aria-label="Close">&times;</button>
+            <div class="konami-header">
+                <p class="konami-brand">MIYAKI</p>
+                <p class="konami-subtitle">Authorized Personnel Only</p>
+            </div>
+            <form id="konami-login-form">
+                <div class="konami-field">
+                    <label class="konami-label">Username</label>
+                    <input type="text" id="konami-username" class="konami-input" placeholder="Employee ID" required>
+                </div>
+                <div class="konami-field konami-field--last">
+                    <label class="konami-label">Password</label>
+                    <input type="password" id="konami-password" class="konami-input" placeholder="Enter password" required>
+                </div>
+                <button type="submit" class="konami-submit">Sign In</button>
+                <div id="konami-error" class="konami-error"></div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

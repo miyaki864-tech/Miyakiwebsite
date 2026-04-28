@@ -1,0 +1,20 @@
+/* Admin foundation: tokens and page base */
+
+:root {
+            --bg-color: #f7f6f2;
+            --text-color: #111111;
+            --border-color: rgba(17, 17, 17, 0.15);
+            --font-heading: 'Syne', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --danger-color: #d9381e;
+            --success-color: #2b7a0b;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }

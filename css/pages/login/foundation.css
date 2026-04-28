@@ -1,0 +1,21 @@
+/* Login foundation: tokens and centered page shell */
+
+:root {
+            --bg-color: #f7f6f2; /* Miyaki light theme */
+            --text-color: #111111; /* Stark black */
+            --border-color: rgba(17, 17, 17, 0.2);
+            --font-heading: 'Syne', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }

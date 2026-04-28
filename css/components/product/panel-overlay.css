@@ -1,0 +1,21 @@
+/* Product panel: overlay */
+
+/* ─── Product Panel Overlay ──────────────────────── */
+.product-panel-overlay {
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.35s ease, visibility 0.35s ease, background 0.35s ease;
+    z-index: 80;
+}
+
+.product-panel-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    background: rgba(0, 0, 0, 0.25);
+}
+

@@ -1,0 +1,9 @@
+/* Admin bundle: dashboard entrypoint with desktop/base modules before mobile overrides. */
+@import url('css/pages/admin/foundation.css');
+@import url('css/pages/admin/layout.css');
+@import url('css/pages/admin/sidebar.css');
+@import url('css/pages/admin/views.css');
+@import url('css/pages/admin/tables.css');
+@import url('css/pages/admin/forms.css');
+@import url('css/pages/admin/modal.css');
+@import url('css/pages/admin/mobile.css');

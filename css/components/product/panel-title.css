@@ -1,0 +1,22 @@
+/* Product panel: title */
+
+/* ─── Product Name ───────────────────────────────── */
+.product-panel-name {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 2.8vw, 3.5rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 0.88;
+    letter-spacing: -0.04em;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.55s ease 0.22s, transform 0.55s ease 0.22s;
+}
+
+.product-detail-panel.active .product-panel-name {
+    opacity: 1;
+    transform: translateY(0);
+}
+

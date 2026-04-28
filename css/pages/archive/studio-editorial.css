@@ -1,0 +1,180 @@
+/* Archive: studio editorial layout */
+
+/* Studio layout — three-act editorial structure */
+.pr-studio-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-top: 0;
+}
+
+.pr-studio-act {
+    width: 100%;
+}
+
+/* ACT I — Headline + metadata rail */
+.pr-studio-act--header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+    margin-bottom: 4rem;
+    /* Prevent metadata rail from touching viewport edge */
+    padding-right: 0;
+}
+
+/* .pr-studio-title inherits all styles from .pr-stage-title */
+
+.pr-studio-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.35rem;
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.35;
+    /* Align to the column content, not the viewport */
+    padding-bottom: 0.5rem;
+}
+
+/* ACT II — Primary kiln image + data column */
+.pr-studio-act--primary {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: 4rem;
+    align-items: start;
+    margin-bottom: 5rem;
+}
+
+.pr-studio-kiln-wrap {
+    height: 60vh;
+    overflow: hidden;
+}
+
+.pr-studio-kiln-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.pr-studio-data-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 60vh;
+    padding: 0.5rem 0;
+}
+
+.pr-studio-stat {
+    /* No extra top border — data col already starts cleanly */
+    padding-top: 0;
+    margin-bottom: 2rem;
+}
+
+/* Stat number + unit on same baseline */
+.pr-stat-line {
+    display: flex;
+    align-items: baseline;
+    gap: 0.1em;
+    line-height: 1;
+}
+
+.pr-stat-number {
+    font-family: var(--font-heading);
+    font-size: clamp(3.5rem, 5.5vw, 7rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1;
+}
+
+.pr-stat-unit {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 2.5vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    opacity: 0.6;
+    /* Sit naturally on baseline — no vertical-align tricks */
+    align-self: flex-start;
+    margin-top: 0.25em;
+}
+
+.pr-stat-label {
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0.35;
+    margin-top: 0.75rem;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(128, 128, 128, 0.2);
+    padding-top: 0.75rem;
+    display: block;
+}
+
+.pr-studio-descriptor {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    opacity: 0.7;
+    margin-top: auto;
+}
+
+.pr-studio-descriptor p {
+    margin-bottom: 1.25rem;
+}
+
+/* ACT III — Philosophy text + overhead vessels */
+.pr-studio-act--process {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: 5rem;
+    /* Center-align so short text column sits opposite the image center */
+    align-items: center;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(128, 128, 128, 0.2);
+    margin-bottom: 6rem;
+}
+
+.pr-studio-philosophy {
+    padding-top: 0;
+}
+
+.pr-studio-pullquote {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 2.5vw, 2.75rem);
+    font-weight: 800;
+    /* Do NOT uppercase — breaks quotation marks in this typeface */
+    text-transform: none;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+}
+
+.pr-studio-philosophy p:not(.pr-studio-pullquote) {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.8;
+    opacity: 0.6;
+    margin-bottom: 1.25rem;
+    max-width: 42ch;
+}
+
+.pr-studio-vessels-wrap {
+    /* Square crop, fills the column width */
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.pr-studio-vessels-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+

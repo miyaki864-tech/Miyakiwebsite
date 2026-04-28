@@ -1,0 +1,14 @@
+/* Product panel: desktop responsive */
+
+/* ─── Responsive mid-width ───────────────────────── */
+@media (max-width: 1100px) {
+    .product-panel-image-col {
+        flex: 0 0 40%;
+    }
+
+    .product-panel-info-col {
+        padding: 2.5rem 2.25rem 2rem 2.5rem;
+    }
+}
+
+

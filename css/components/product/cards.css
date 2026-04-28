@@ -1,0 +1,110 @@
+/* Product cards */
+
+/* ─── Bento Items ────────────────────────────────── */
+.bento-item {
+    position: relative;
+    background: rgba(128, 128, 128, 0.04);
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.bento-item.bento-hero {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.bento-item.bento-wide {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.bento-item.bento-tall {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.bento-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bento-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #000;
+    color: #fff;
+    padding: 1.25rem 1.5rem;
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+.product-name {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+    letter-spacing: -0.01em;
+}
+
+.product-price {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    opacity: 0.85;
+}
+
+.bento-add {
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 0.55rem 1.1rem;
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.bento-add:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* ─── Image shimmer while loading ───────────────── */
+.bento-img-wrap {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+}
+
+.bento-item>img,
+.bento-img-wrap img {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-grid-empty {
+    grid-column: span 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    opacity: 0.3;
+    gap: 1rem;
+}
+
+.product-grid-empty-text {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}

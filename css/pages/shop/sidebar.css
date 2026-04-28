@@ -1,0 +1,96 @@
+/* Shop: collection sidebar */
+
+/* ─── Shop Sidebar ──────────────────────────────── */
+.shop-sidebar {
+    width: 320px;
+    min-width: 320px;
+    flex-shrink: 0;
+    height: calc(100vh - 5rem);
+    position: sticky;
+    top: 5rem;
+    border-right: 1px solid rgba(128, 128, 128, 0.1);
+    padding: 5rem 2.5rem 0 2.5rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    overflow: hidden;
+    background: var(--bg-color);
+}
+
+.sidebar-heading {
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(128, 128, 128, 0.4);
+    margin-bottom: 2.5rem;
+    flex-shrink: 0;
+}
+
+.series-links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    scrollbar-width: none;
+}
+
+.series-links-container::-webkit-scrollbar {
+    display: none;
+}
+
+.series-link {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--text-color);
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    opacity: 0.25;
+    transition: opacity 0.35s var(--transition-smooth),
+        transform 0.35s var(--transition-smooth);
+    padding: 1.1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform-origin: left;
+    white-space: nowrap;
+    width: calc(100% - 12px);
+}
+
+.series-link:hover {
+    opacity: 0.7;
+}
+
+.series-link.active {
+    opacity: 1;
+    transform: translateX(12px);
+}
+
+.series-link-count {
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    opacity: 0.5;
+    background: rgba(128, 128, 128, 0.1);
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    flex-shrink: 0;
+    margin-left: 0.75rem;
+}
+
+.series-link.active .series-link-count {
+    opacity: 0.7;
+}
+

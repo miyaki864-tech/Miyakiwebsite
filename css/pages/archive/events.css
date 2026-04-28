@@ -1,0 +1,331 @@
+/* Archive: events and booking cards */
+
+/* ─── Events Section ─────────────────────────────── */
+/* ─── Events Bento Grid ───────────────────────────────────────────
+   Top row: Hero + stats (fixed 240px height)
+   Bottom rows: Event cards (auto height, 2 cols each)
+─────────────────────────────────────────────────────────────── */
+
+.events-bento {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* Row 1 is 240px, subsequent rows are auto */
+    grid-auto-rows: auto;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.events-bento>.sb-card--ev-hero,
+.events-bento>.sb-card--stat {
+    grid-row: 1;
+    height: 240px;
+}
+
+/* ── CARD 1: Hero (Col 1-2, Row 1) ── */
+.sb-card--ev-hero {
+    grid-column: span 2;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.sb-ev-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.4rem, 3.8vw, 4.2rem);
+    font-weight: 800;
+    text-transform: none;
+    letter-spacing: -0.04em;
+    line-height: 0.9;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.sb-hero-sub {
+    font-family: var(--font-body);
+    font-size: 0.55rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    line-height: 1.6;
+    opacity: 0.45;
+    margin: 1.5rem 0 0 0;
+    max-width: 90%;
+    white-space: normal;
+}
+
+/* ── STATS: Location etc ── */
+.sb-ev-city {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--bg-color);
+    margin: 0.2rem 0;
+    line-height: 1;
+}
+
+/* ── EVENT CARDS (Rows 2+, Col 1-2 or 3-4) ── */
+.ev-card {
+    grid-column: span 2;
+    background: rgba(255, 255, 255, 0.02);
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    /* For smooth form expansion */
+    transition: background 0.3s ease;
+}
+
+.ev-card--empty {
+    grid-column: span 4;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.ev-empty-text {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    opacity: 0.4;
+    line-height: 1.6;
+    margin-top: 1rem;
+}
+
+.ev-card-info {
+    padding: 2.2rem 2.2rem;
+    flex-grow: 1;
+}
+
+.ev-badges {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.ev-badge {
+    font-family: var(--font-body);
+    font-size: 0.5rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.5rem;
+    border: 1px solid currentColor;
+    white-space: nowrap;
+}
+
+.ev-badge--upcoming {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.ev-badge--spots {
+    color: rgba(140, 220, 140, 0.8);
+}
+
+.ev-badge--full {
+    color: rgba(220, 140, 100, 0.8);
+}
+
+.ev-badge--cancelled {
+    color: rgba(220, 80, 80, 0.7);
+    text-decoration: line-through;
+}
+
+.ev-card-title {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin: 0 0 1rem 0;
+}
+
+.ev-card-meta {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 1.5rem;
+}
+
+.ev-meta-sep {
+    margin: 0 0.5rem;
+    opacity: 0.5;
+}
+
+.ev-card-desc {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    line-height: 1.65;
+    opacity: 0.5;
+    margin: 0;
+}
+
+/* ── EVENT CARD FOOTER ── */
+.ev-card-foot {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1.25rem 2.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ev-reserve-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-color);
+    opacity: 0.6;
+    cursor: pointer;
+    transition: opacity 0.2s, letter-spacing 0.2s;
+    outline: none;
+}
+
+.ev-reserve-btn:hover {
+    opacity: 1;
+    letter-spacing: 0.25em;
+}
+
+.ev-status-note {
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.3;
+}
+
+.ev-capacity-note {
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.3;
+}
+
+.ev-card--is-cancelled .ev-card-title,
+.ev-card--is-cancelled .ev-card-meta,
+.ev-card--is-cancelled .ev-card-desc {
+    opacity: 0.2;
+    text-decoration: line-through;
+}
+
+/* ── BOOKING FORM (Hidden by default) ── */
+.ev-form-wrap {
+    max-height: 0;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.2);
+    transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+    overflow: hidden;
+}
+
+.ev-card.ev-open .ev-form-wrap {
+    max-height: 500px;
+    opacity: 1;
+}
+
+.ev-bento-form {
+    padding: 2.2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ev-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.ev-bento-form input,
+.ev-bento-form textarea {
+    width: 100%;
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--text-color);
+    padding: 0.6rem 0;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.ev-bento-form input:focus,
+.ev-bento-form textarea:focus {
+    border-bottom-color: rgba(255, 255, 255, 0.6);
+}
+
+.ev-bento-form input::placeholder,
+.ev-bento-form textarea::placeholder {
+    opacity: 0.3;
+    font-style: italic;
+}
+
+.ev-input-guests {
+    grid-column: span 1;
+}
+
+.ev-input-note {
+    grid-column: span 2;
+    resize: none;
+}
+
+.ev-form-submit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: var(--text-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 1rem 1.5rem;
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.ev-form-submit:hover {
+    opacity: 0.9;
+}
+
+.ev-form-submit:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.ev-success {
+    padding: 3rem 2.2rem;
+    text-align: center;
+}
+
+.ev-success-check {
+    font-size: 2rem;
+    opacity: 0.8;
+}
+
+.ev-success-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin: 1rem 0 0.5rem 0;
+}
+
+.ev-success-sub {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    opacity: 0.5;
+    margin: 0;
+}
+
+.ev-form-error {
+    color: rgba(220, 80, 80, 0.9);
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    margin-top: 1rem;
+}
+
+

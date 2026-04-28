@@ -1,0 +1,8 @@
+/* Product panel: spacer */
+
+/* ─── Spacer ─────────────────────────────────────── */
+.panel-spacer {
+    flex: 1;
+    min-height: 2rem;
+}
+

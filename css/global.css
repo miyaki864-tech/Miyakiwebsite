@@ -1,0 +1,11 @@
+/* Global bundle: foundations, shared layout, home, and cart. */
+@import url('foundations/tokens.css');
+@import url('foundations/reset.css');
+@import url('foundations/typography.css');
+@import url('layout/navbar.css');
+@import url('pages/home/hero.css');
+@import url('pages/home/footer.css');
+@import url('components/cart/base.css');
+@import url('foundations/animations.css');
+@import url('layout/responsive.css');
+@import url('foundations/scrollbars.css');

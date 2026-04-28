@@ -1,0 +1,97 @@
+/* Layout: desktop navigation */
+
+/* ─── Navigation ────────────────────────────────── */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    z-index: 100;
+    mix-blend-mode: difference;
+    color: #fff;
+}
+
+.navbar a {
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-cart-trigger {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    border: none;
+    background: none;
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+}
+
+.nav-cart-trigger::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+}
+
+.navbar a:hover::after {
+    transform: translateX(0);
+}
+
+.navbar a:hover::after,
+.navbar a:focus-visible::after,
+.nav-cart-trigger:hover::after,
+.nav-cart-trigger:focus-visible::after {
+    transform: translateX(0);
+}
+
+.navbar a:focus-visible,
+.nav-cart-trigger:focus-visible {
+    outline: 1px solid currentColor;
+    outline-offset: 0.35rem;
+}
+
+
+.nav-links,
+.nav-actions {
+    display: flex;
+    gap: 2rem;
+    flex: 1;
+}
+
+.nav-actions {
+    justify-content: flex-end;
+}
+
+.navbar a.logo {
+    font-size: 1.85rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    flex: 0 0 auto;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>The Archive | MIYAKI</title>
+    <meta name="description"
+        content="Read editorial pieces, lookbooks, and studio stories from Miyaki.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Syne:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="archive-page">
+
+    <nav class="navbar solid-nav archive-nav">
+        <div class="nav-links">
+            <a href="archive.html">Archive</a>
+        </div>
+        <a href="shop.html" class="logo">MIYAKI</a>
+        <div class="nav-actions">
+            <button type="button" class="nav-cart-trigger" id="cart-toggle">Cart (0)</button>
+            <span id="current-time"></span>
+        </div>
+    </nav>
+
+    <!-- Archive root — same structure as shop-main-layout -->
+    <main class="shop-main-layout" id="archive-root">
+        <!-- Populated by archive.js -->
+    </main>
+
+    <!-- Article Reading Modal -->
+    <div class="article-modal" id="article-modal">
+        <button class="article-modal-close" id="article-modal-close" aria-label="Close">&times;</button>
+        <div class="article-modal-inner">
+            <div class="article-modal-image-col" id="article-modal-image-col">
+                <img src="" alt="" id="article-modal-img" class="article-modal-img">
+            </div>
+        <div class="article-modal-text-col" id="article-modal-text-col">
+                <p class="article-modal-date" id="article-modal-date"></p>
+                <h2 class="article-modal-title" id="article-modal-title"></h2>
+                <div class="article-modal-divider"></div>
+                <div class="article-modal-body" id="article-modal-body"></div>
+            </div>
+        </div>
+    </div>
+    <div class="article-modal-overlay" id="article-modal-overlay"></div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

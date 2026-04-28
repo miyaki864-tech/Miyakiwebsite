@@ -1,0 +1,77 @@
+/* Shop: slides viewport */
+
+/* ─── Shop Slides Viewport ──────────────────────── */
+.shop-slides-viewport {
+    flex: 1;
+    height: calc(100vh - 5rem);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.shop-slides-track {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ─── Individual Series Slide ────────────────────── */
+.series-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    display: none;
+    pointer-events: none;
+    opacity: 0;
+    transition: transform 1.2s cubic-bezier(0.3, 1.15, 0.2, 1), opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.series-slide::-webkit-scrollbar {
+    display: none;
+}
+
+.series-slide.slide-active {
+    display: block;
+    pointer-events: all;
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 20;
+}
+
+.series-slide.slide-enter-from-below {
+    transform: translateY(100vh);
+    opacity: 0;
+}
+
+.series-slide.slide-enter-from-above {
+    transform: translateY(-100vh);
+    opacity: 0;
+}
+
+.series-slide.slide-exit-up {
+    display: block;
+    transform: translateY(-100vh) scale(0.95);
+    opacity: 0;
+    z-index: 10;
+}
+
+.series-slide.slide-exit-down {
+    display: block;
+    transform: translateY(100vh) scale(0.95);
+    opacity: 0;
+    z-index: 10;
+}
+
+.series-slide-inner {
+    padding: 2.5rem 4rem 6rem 4rem;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Checkout | MIYAKI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body class="checkout-page">
+    <div class="checkout-wrapper">
+        <header class="checkout-header">
+            <a href="shop.html" class="logo">MIYAKI</a>
+            <a href="shop.html" class="back-shop">Return to Shop</a>
+        </header>
+
+        <main class="checkout-main">
+            <section class="checkout-intro" aria-labelledby="checkout-title">
+                <p class="checkout-kicker">Secure Checkout</p>
+                <h1 id="checkout-title">Checkout</h1>
+                <p class="checkout-copy">Confirm your pieces, delivery details, and payment.</p>
+            </section>
+
+            <div class="checkout-flow-container">
+                <!-- Order Overview -->
+                <div class="order-overview">
+                    <div class="summary-heading">
+                        <p class="summary-kicker">Bag</p>
+                        <h2>Order</h2>
+                    </div>
+                    <div id="order-overview-container">
+                        <!-- Dynamic items will be injected here -->
+                    </div>
+                    <div class="overview-totals">
+                        <div class="overview-pricing">
+                            <span class="price-label">Subtotal</span>
+                            <span class="price-value" id="subtotal-display">Rs 0.00</span>
+                        </div>
+                        <div class="overview-pricing overview-pricing-total">
+                            <span class="price-label">Total</span>
+                            <span class="price-value" id="grand-total">Rs 0.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accordion Steps -->
+                <div class="accordion">
+                    <!-- Step 1: Contact -->
+                    <div class="accordion-step active" id="step-contact">
+                        <div class="step-header">
+                            <div class="step-title">
+                                <span class="step-number">1</span>
+                                <h3>Contact</h3>
+                            </div>
+                        </div>
+                        <div class="step-body">
+                            <input type="email" placeholder="Email Address" class="miyaki-input" required id="email">
+                            <button class="stark-btn next-step" data-next="step-shipping">Continue</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Shipping -->
+                    <div class="accordion-step" id="step-shipping">
+                        <div class="step-header">
+                            <div class="step-title">
+                                <span class="step-number">2</span>
+                                <h3>Delivery</h3>
+                            </div>
+                        </div>
+                        <div class="step-body">
+                            <div class="input-grid">
+                                <input type="text" placeholder="First Name" class="miyaki-input" required id="shipping-fname">
+                                <input type="text" placeholder="Last Name" class="miyaki-input" required id="shipping-lname">
+                            </div>
+                            <input type="text" placeholder="Address" class="miyaki-input line-input" required id="shipping-address">
+                            <div class="input-grid city-pin">
+                                <input type="text" placeholder="City" class="miyaki-input" required id="shipping-city">
+                                <input type="text" placeholder="PIN Code" class="miyaki-input" id="pincode" required>
+                            </div>
+                            <input type="text" placeholder="Phone" class="miyaki-input line-input" required id="shipping-phone">
+                            <div class="shipping-quote" id="shipping-quote-display">Shipping: Calculated upon PIN</div>
+                            <button class="stark-btn next-step" data-next="step-payment">Continue</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Payment -->
+                    <div class="accordion-step" id="step-payment">
+                        <div class="step-header">
+                            <div class="step-title">
+                                <span class="step-number">3</span>
+                                <h3>Payment</h3>
+                            </div>
+                        </div>
+                        <div class="step-body">
+                            <p class="payment-subtitle">Choose your preferred method.</p>
+                            <div class="upi-container">
+                                <div class="upi-header">
+                                    <span class="upi-title">UPI</span>
+                                    <span class="upi-badge">Recommended</span>
+                                </div>
+                                
+                                <div class="upi-desktop" id="upi-desktop">
+                                    <p>Scan with any UPI app</p>
+                                    <div class="qr-placeholder">
+                                        <img src="" alt="UPI QR Code" id="upi-qr-image">
+                                    </div>
+                                </div>
+                                <div class="upi-mobile" id="upi-mobile">
+                                    <button class="stark-btn btn-upi" id="btn-upi-intent">Pay with UPI</button>
+                                </div>
+                            </div>
+                            
+                            <button class="stark-btn btn-upi btn-secondary" id="btn-pay-cod">Cash on Delivery</button>
+
+                            <button class="stark-btn checkout-submit" id="btn-pay-other">Card / Netbanking</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Simulated Payment Gateway Modal -->
+    <div class="payment-modal-overlay" id="payment-modal">
+        <div class="payment-modal-content">
+            <div class="modal-header">
+                <h2>MIYAKI Checkout</h2>
+                <button class="close-modal" id="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Processing payment of <strong id="modal-amount">Rs 65.00</strong></p>
+                <div class="mock-gateway">
+                    <button class="gateway-btn" id="simulate-success">Simulate Success</button>
+                    <button class="gateway-btn btn-fail" id="simulate-failure">Simulate Failure</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+/* Checkout and tracking: mobile responsive rules */
+
+@media (max-width: 860px) {
+    .checkout-wrapper {
+        padding: 1rem 0.85rem 1.75rem;
+    }
+
+    .checkout-header {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        margin: -1rem -0.85rem 0;
+        padding: 0.95rem 0.85rem;
+        background: rgba(15, 15, 15, 0.92);
+        backdrop-filter: blur(16px);
+    }
+
+    .checkout-main {
+        padding-top: 1rem;
+    }
+
+    .checkout-intro {
+        display: block;
+        margin-bottom: 0.75rem;
+        padding-top: 0;
+    }
+
+    .checkout-intro h1 {
+        max-width: 100%;
+        margin-top: 0.35rem;
+        margin-bottom: 0;
+        font-size: clamp(2.55rem, 12.5vw, 3.85rem);
+        line-height: 0.82;
+        white-space: nowrap;
+    }
+
+    .checkout-copy {
+        display: none;
+    }
+
+    .checkout-flow-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .order-overview {
+        position: static;
+        order: 1;
+        width: 100%;
+        gap: 0.72rem;
+        padding: 0.78rem;
+    }
+
+    .summary-heading {
+        padding-bottom: 0.62rem;
+    }
+
+    .summary-kicker {
+        font-size: 0.56rem;
+        letter-spacing: 0.2em;
+    }
+
+    .summary-heading h2 {
+        font-size: 0.94rem;
+    }
+
+    .accordion {
+        order: 2;
+        width: 100%;
+    }
+
+    .input-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .next-step {
+        width: 100%;
+        max-width: none;
+    }
+
+    .miyaki-input {
+        font-size: 16px !important;
+    }
+
+    .summary-item {
+        grid-template-columns: 54px minmax(0, 1fr);
+        gap: 0.72rem;
+        padding-bottom: 0.65rem;
+        margin-bottom: 0.62rem;
+    }
+
+    .summary-item-image {
+        width: 54px;
+        height: 60px;
+    }
+
+    .summary-item-copy h3 {
+        font-size: 0.78rem;
+    }
+
+    .overview-totals {
+        gap: 0.45rem;
+    }
+
+    .overview-pricing {
+        font-size: 0.82rem;
+    }
+
+    .step-header {
+        padding: 0.78rem 0.82rem;
+    }
+
+    .step-header h3 {
+        font-size: 0.92rem;
+        white-space: nowrap;
+    }
+
+    .step-body {
+        padding: 0 0.82rem 0.85rem;
+    }
+
+    .miyaki-input {
+        min-height: 3.08rem;
+        margin-bottom: 0.62rem;
+        padding: 0.78rem 0.86rem;
+    }
+
+    .stark-btn {
+        min-height: 3.08rem;
+        margin-top: 0.64rem;
+        padding: 0.78rem 1rem;
+        font-size: 0.72rem;
+        letter-spacing: 0.13em;
+    }
+
+    .payment-subtitle {
+        display: none;
+    }
+
+    .upi-container {
+        margin-bottom: 0.68rem;
+        padding: 0.82rem;
+    }
+
+    .upi-header {
+        margin-bottom: 0.72rem;
+    }
+
+    .upi-title {
+        font-size: 1.05rem;
+    }
+
+    .upi-badge {
+        padding: 0.28rem 0.45rem;
+        font-size: 0.5rem;
+    }
+
+    .tracking-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .tracking-actions {
+        flex-direction: column;
+    }
+
+    .tracking-btn {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.45rem;
+    }
+
+    .back-shop {
+        font-size: 0.58rem;
+        letter-spacing: 0.14em;
+    }
+
+    .checkout-copy {
+        font-size: 0.92rem;
+    }
+
+    .step-title {
+        gap: 0.58rem;
+    }
+
+    .step-number {
+        width: 1.55rem;
+        height: 1.55rem;
+        font-size: 0.66rem;
+    }
+
+    .overview-pricing-total {
+        font-size: 1rem;
+    }
+}

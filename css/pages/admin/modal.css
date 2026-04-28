@@ -1,0 +1,56 @@
+/* Admin modal: delete confirmation overlay */
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    backdrop-filter: blur(4px);
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal {
+    background: var(--bg-color);
+    padding: 3rem;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.modal h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    border: 1px solid var(--text-color);
+    background: transparent;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btn-danger {
+    background: var(--danger-color);
+    color: #fff;
+    border-color: var(--danger-color);
+}
+
+.btn-cancel:hover { background: rgba(0,0,0,0.05); }

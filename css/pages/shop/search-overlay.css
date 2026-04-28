@@ -1,0 +1,16 @@
+/* Shop: search overlay */
+
+/* ─── Search Overlay Slide ───────────────────────── */
+.search-overlay-slide {
+    position: absolute;
+    inset: 0;
+    overflow-y: auto;
+    z-index: 20;
+    background: var(--bg-color);
+    scrollbar-width: none;
+}
+
+.search-overlay-slide::-webkit-scrollbar {
+    display: none;
+}
+

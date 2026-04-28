@@ -1,0 +1,198 @@
+/* Archive: responsive layout */
+
+@media (max-width: 1024px) {
+    .article-modal-inner {
+        flex-direction: column;
+    }
+
+    .article-modal-image-col {
+        flex: 0 0 40%;
+    }
+
+    .article-modal-text-col {
+        padding: 4rem 3rem;
+    }
+
+    .article-modal-title {
+        font-size: 2.25rem;
+    }
+
+    .archive-stage-inner {
+        padding: 3rem 2rem 6rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Mobile App-Style Vertical Stack for Archive */
+    .archive-main-layout {
+        flex-direction: column;
+    }
+
+    .archive-sidebar {
+        width: 100%;
+        height: auto;
+        min-width: unset;
+        position: sticky;
+        top: calc(var(--mobile-top-bar) + env(safe-area-inset-top));
+        border-right: none;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        z-index: 100;
+        background: var(--bg-color);
+        margin: 0;
+    }
+
+    .sidebar-journal-item {
+        flex: 1;
+        text-align: center;
+        padding: 1rem 0;
+        border-bottom: none;
+        border-right: 1px solid rgba(128, 128, 128, 0.15);
+        opacity: 0.5;
+        transition: opacity 0.2s, background 0.2s, transform 0.1s;
+    }
+
+    .sidebar-journal-item:last-child {
+        border-right: none;
+    }
+
+    .sidebar-journal-item.active-item {
+        border-left: none;
+        opacity: 1;
+        background: var(--text-color);
+        color: var(--bg-color);
+        padding-left: 0;
+    }
+
+    .sidebar-journal-item:active {
+        transform: scale(0.94) translateZ(0);
+    }
+
+    .sidebar-journal-empty {
+        display: none;
+    }
+
+    .archive-search-bottom {
+        display: none;
+    }
+
+    .archive-grid-viewport {
+        height: auto;
+        position: static;
+        overflow: visible;
+    }
+
+    .archive-stage-inner {
+        padding: 1.5rem 1rem 4rem;
+    }
+
+    /* Reveal all sections, strictly vertical layout */
+    .pr-bespoke-layout.reveal-up {
+        display: none !important;
+    }
+
+    .pr-bespoke-layout.reveal-up.active {
+        display: flex !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    /* 1 Column Brutalist Bento */
+    .studio-bento,
+    .about-bento,
+    .events-bento {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        height: auto;
+    }
+
+    /* The critical absolute collapse fix */
+    .sb-card-inner {
+        position: relative;
+        padding: 1.25rem 1.5rem;
+        height: auto;
+        min-height: 160px;
+        justify-content: flex-end;
+    }
+
+    /* Force all cards to block layouts */
+    .sb-card {
+        width: 100% !important;
+        grid-column: auto !important;
+        grid-row: auto !important;
+        height: auto !important;
+    }
+
+    /* Aspect Ratio enforcement */
+    .sb-card--hero,
+    .sb-card--decl,
+    .sb-card--ev-hero {
+        min-height: auto;
+    }
+
+    .sb-card--hero .sb-card-inner,
+    .sb-card--decl .sb-card-inner {
+        min-height: 240px;
+    }
+
+    .sb-card--image {
+        height: 65vw !important;
+    }
+
+    .sb-card--image .sb-card-inner {
+        position: absolute;
+    }
+
+    /* Stat cards paired via JS */
+    .stat-pair-row {
+        display: flex;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .stat-pair-row .sb-card--stat {
+        flex: 1;
+        min-height: 0;
+        aspect-ratio: 1 / 1;
+    }
+
+    .stat-pair-row .sb-card-inner {
+        min-height: 0;
+        padding: 1rem;
+    }
+
+    /* Typography Overrides */
+    .sb-hero-title,
+    .sb-decl-title,
+    .sb-ev-title {
+        font-size: 3rem;
+    }
+
+    .sb-quote-text {
+        font-size: 1.8rem;
+    }
+
+    .sb-about-statement {
+        font-size: 2.4rem;
+        white-space: normal;
+    }
+
+    /* Event Forms - The zoom trap fix */
+    .ev-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ev-input,
+    .ev-textarea,
+    .ev-select {
+        font-size: 16px !important;
+    }
+
+    .ev-form-wrap {
+        padding: 1.5rem 1.25rem;
+    }
+}

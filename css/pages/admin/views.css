@@ -1,0 +1,47 @@
+/* Admin views: main workspace and headers */
+
+/* Main Content Area */
+.dashboard-main {
+    flex: 1;
+    padding: 4rem;
+    overflow-y: auto;
+}
+
+.dashboard-view {
+    display: none;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.dashboard-view.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.view-header {
+    margin-bottom: 3rem;
+}
+
+.view-header--split {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.view-header h2 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 0 0.5rem 0;
+    letter-spacing: -0.04em;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    opacity: 0.6;
+    margin: 0;
+}

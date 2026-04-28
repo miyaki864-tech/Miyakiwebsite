@@ -1,0 +1,19 @@
+/* Product panel: description */
+
+/* ─── Description ────────────────────────────────── */
+.product-panel-description {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: var(--text-color);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease 0.38s, transform 0.5s ease 0.38s;
+    max-width: 42ch;
+}
+
+.product-detail-panel.active .product-panel-description {
+    opacity: 0.6;
+    transform: translateY(0);
+}
+

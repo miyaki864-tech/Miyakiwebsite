@@ -1,0 +1,17 @@
+node_modules/
+.DS_Store
+*.log
+
+# Local runtime data
+miyaki.db
+*.sqlite
+*.sqlite3
+
+# Environment and secret files
+.env
+.env.*
+
+# Generated coverage/build outputs
+coverage/
+dist/
+build/

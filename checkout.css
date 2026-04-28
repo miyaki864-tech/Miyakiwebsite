@@ -1,0 +1,10 @@
+/* Checkout bundle: imports in preserved cascade order. */
+@import url('css/pages/checkout/foundation.css');
+@import url('css/pages/checkout/shell.css');
+@import url('css/pages/checkout/order-summary.css');
+@import url('css/pages/checkout/accordion.css');
+@import url('css/pages/checkout/forms.css');
+@import url('css/pages/checkout/buttons.css');
+@import url('css/pages/checkout/payment.css');
+@import url('css/pages/checkout/tracking.css');
+@import url('css/pages/checkout/mobile.css');

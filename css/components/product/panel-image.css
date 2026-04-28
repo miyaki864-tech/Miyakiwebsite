@@ -1,0 +1,38 @@
+/* Product panel: image column */
+
+/* ─── Left Column — Full-Bleed Image ─────────────── */
+.product-panel-image-col {
+    position: relative;
+    flex: 0 0 40%;
+    height: 100%;
+    overflow: hidden;
+    background: #111;
+}
+
+.product-panel-img-wrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.product-panel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.04);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-detail-panel.active .product-panel-img {
+    transform: scale(1);
+}
+
+/* Soft vignette at the right edge for depth */
+.product-panel-image-col::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, transparent 70%, rgba(15, 15, 15, 0.35) 100%);
+    pointer-events: none;
+}
+

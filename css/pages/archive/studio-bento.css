@@ -1,0 +1,301 @@
+/* Archive: studio bento cards */
+
+/* ─── Studio Bento Grid ──────────────────────────────────────────
+   The content column is: 100vw − 320px sidebar − 8rem (4rem×2 pad)
+   At 1440px viewport → content ≈ 984px.
+   4-col grid, gap 0.75rem → each col ≈ (984 − 3×0.75rem) / 4 ≈ 240px.
+   Row heights are absolute: sized so text never overflows.
+   Row 1: 240px  — title + two stats (large numerals + short sub)
+   Row 2: 320px  — kiln image + quote card (medium-length quote)
+   Row 3: 220px  — same image continued + material card + vessels
+──────────────────────────────────────────────────────────────── */
+
+.studio-bento {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 240px 320px 220px;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+/* ── Card base ── */
+.sb-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(128, 128, 128, 0.12);
+}
+
+.sb-card-inner {
+    position: absolute;
+    inset: 0;
+    padding: 1.75rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 0;
+}
+
+/* ── CARD 1: Hero title — col 1–2, row 1 ── */
+.sb-card--hero {
+    grid-column: span 2;
+    grid-row: 1;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.sb-eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.58rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    opacity: 0.3;
+    margin-bottom: 0.9rem;
+    flex: 0 0 auto;
+    align-self: flex-start;
+}
+
+/* Big headline — fills the card at ≈480px wide */
+.sb-hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 4.8vw, 5.5rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    line-height: 0.84;
+    color: var(--text-color);
+    margin: 0 0 0.9rem 0;
+}
+
+.sb-hero-sub {
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.35;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* ── CARDS 2 & 3: Stat — col 3, col 4, row 1 ── */
+.sb-card--stat {
+    grid-column: span 1;
+    grid-row: 1;
+}
+
+.sb-card--accent {
+    background: rgba(163, 153, 138, 0.07);
+    border-color: rgba(163, 153, 138, 0.18);
+}
+
+.sb-card--dark {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Stat content centered as a group */
+.sb-card--stat .sb-card-inner {
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.6rem;
+}
+
+.sb-stat-label {
+    font-family: var(--font-body);
+    font-size: 0.53rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    opacity: 0.28;
+    flex: 0 0 auto;
+    align-self: flex-start;
+    margin-bottom: 0;
+}
+
+.sb-stat-line {
+    display: flex;
+    align-items: baseline;
+    gap: 0.05em;
+    flex: 0 0 auto;
+}
+
+/* Number sized to fill ~240px col at row-height 240px — 4-digit '1280' + unit must fit */
+.sb-stat-num {
+    font-family: var(--font-heading);
+    font-size: clamp(2.8rem, 4.2vw, 4.5rem);
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    color: var(--text-color);
+}
+
+.sb-stat-unit {
+    font-family: var(--font-heading);
+    font-size: clamp(1.1rem, 1.8vw, 1.9rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    opacity: 0.45;
+    align-self: flex-start;
+    margin-top: 0.2em;
+}
+
+.sb-stat-sub {
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    line-height: 1.55;
+    opacity: 0.35;
+    margin: 0;
+    /* one line only — never overflows the card */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ── CARD 4: Kiln image — col 1–2, rows 2–3 ── */
+.sb-card--kiln {
+    grid-column: span 2;
+    grid-row: 2 / 4;
+}
+
+/* ── CARD 5: Quote — col 3–4, row 2 ── */
+.sb-card--quote {
+    grid-column: span 2;
+    grid-row: 2;
+    background: rgba(255, 255, 255, 0.025);
+}
+
+/* Quote content reads top-to-bottom */
+.sb-card--quote .sb-card-inner {
+    justify-content: flex-start;
+    gap: 0;
+}
+
+.sb-quote-mark {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1;
+    opacity: 0.12;
+    margin: 0 0 0.5rem -0.15rem;
+    flex: 0 0 auto;
+    display: block;
+}
+
+/* Headline quote — must fit 2 lines max in 320px row */
+.sb-quote-text {
+    font-family: var(--font-heading);
+    font-size: clamp(1.05rem, 1.8vw, 1.45rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin: 0 0 1rem 0;
+    color: var(--text-color);
+    font-style: normal;
+    opacity: 0.9;
+}
+
+/* Body copy — 2 paragraphs must fit in remaining space */
+.sb-quote-body {
+    font-family: var(--font-body);
+    font-size: 0.76rem;
+    line-height: 1.65;
+    opacity: 0.45;
+    margin: 0 0 0.6rem 0;
+    /* overflow safety */
+    overflow: hidden;
+}
+
+.sb-quote-body:last-child {
+    margin-bottom: 0;
+}
+
+.sb-quote-body em {
+    font-style: italic;
+    opacity: 1;
+}
+
+/* ── CARD 6: Material — col 3, row 3 ── */
+.sb-card--material {
+    grid-column: span 1;
+    grid-row: 3;
+    background: var(--text-color);
+    border-color: transparent;
+}
+
+.sb-card--material .sb-card-inner {
+    justify-content: space-between;
+}
+
+.sb-card--material .sb-stat-label {
+    color: var(--bg-color);
+    opacity: 0.38;
+}
+
+/* Material name — fits ≈240px col at 220px row */
+.sb-material-name {
+    font-family: var(--font-heading);
+    font-size: clamp(1.6rem, 2.6vw, 2.5rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    line-height: 0.86;
+    color: var(--bg-color);
+    margin: 0;
+}
+
+.sb-material-desc {
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    line-height: 1.55;
+    color: var(--bg-color);
+    opacity: 0.45;
+    margin: 0;
+}
+
+/* ── CARD 7: Vessels image — col 4, row 3 ── */
+.sb-card--vessels {
+    grid-column: span 1;
+    grid-row: 3;
+}
+
+/* ── Shared: image card styling ── */
+.sb-card--image .sb-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 0.9s ease;
+    filter: grayscale(18%) brightness(0.82);
+}
+
+.sb-card--image:hover .sb-img {
+    transform: scale(1.05);
+    filter: grayscale(0%) brightness(0.9);
+}
+
+.sb-image-caption {
+    position: absolute;
+    bottom: 1rem;
+    left: 1.25rem;
+    font-family: var(--font-body);
+    font-size: 0.52rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0.3rem 0.6rem;
+    backdrop-filter: blur(4px);
+    z-index: 2;
+}
+
+/* ── Subtle hover tint on text cards ── */
+.sb-card:not(.sb-card--image):not(.sb-card--material)::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0);
+    transition: background 0.35s ease;
+    pointer-events: none;
+}
+
+.sb-card:not(.sb-card--image):not(.sb-card--material):hover::after {
+    background: rgba(255, 255, 255, 0.025);
+}
+

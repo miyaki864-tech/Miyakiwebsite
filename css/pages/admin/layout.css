@@ -1,0 +1,8 @@
+/* Admin layout: dashboard shell */
+
+/* Layout */
+.dashboard-layout {
+    display: flex;
+    min-height: 100vh;
+    width: 100vw;
+}

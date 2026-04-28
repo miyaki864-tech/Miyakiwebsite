@@ -1,0 +1,391 @@
+/* Archive: about editorial layout */
+
+/* ─── SPECTACULAR ABOUT SECTION — 4-ACT EDITORIAL ───── */
+.pr-about-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* Shared act spacing */
+.pr-about-act {
+    width: 100%;
+}
+
+/* ── ACT I: THE DECLARATION ──────────────────────────── */
+.pr-about-act--declaration {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 4rem;
+    margin-bottom: 4rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+    overflow: hidden;
+    /* safety: clip any headline overrun */
+}
+
+/* ── Preheader row: "Against" + rule + meta ── */
+.pr-about-preheader {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.pr-about-preheader-tag {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0.35;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.pr-about-preheader-rule {
+    flex: 1;
+    height: 1px;
+    background: rgba(128, 128, 128, 0.2);
+}
+
+.pr-about-preheader-meta {
+    font-family: var(--font-body);
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.25;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* ── The single full-width word ── */
+.pr-about-headline {
+    font-family: var(--font-heading);
+    /* Scale to fill the content column width. At 1710px viewport:
+       content width = 1710 - 280(sidebar) - 160(padding) = ~1270px.
+       "Perfection." is ~10 chars + tight kerning → clamp to fill. */
+    font-size: clamp(4rem, 6.5vw, 8.5rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    line-height: 0.88;
+    color: var(--text-color);
+    margin: 0 0 3rem 0;
+}
+
+/* ── Manifesto body row below the headline ── */
+.pr-about-decl-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(128, 128, 128, 0.12);
+}
+
+.pr-about-manifesto-text {
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    line-height: 1.85;
+    opacity: 0.65;
+    margin: 0;
+    max-width: 52ch;
+}
+
+.pr-about-manifesto-text em {
+    font-style: italic;
+    opacity: 1;
+    color: var(--text-color);
+}
+
+/* ── ACT II: THE HERITAGE ────────────────────────────── */
+.pr-about-act--heritage {
+    display: grid;
+    grid-template-columns: 6fr 5fr;
+    gap: 5rem;
+    align-items: start;
+    margin-bottom: 0;
+    padding-bottom: 5rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.pr-about-heritage-img-col {
+    position: relative;
+    height: 70vh;
+    overflow: hidden;
+}
+
+.pr-about-heritage-img-col img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(20%) contrast(1.08);
+    transition: filter 0.8s ease;
+}
+
+.pr-about-heritage-img-col:hover img {
+    filter: grayscale(0%) contrast(1);
+}
+
+.pr-about-img-caption {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.35);
+    padding: 0.4rem 0.7rem;
+    backdrop-filter: blur(4px);
+}
+
+.pr-about-heritage-text-col {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.5rem;
+    height: 70vh;
+}
+
+.pr-about-heritage-stat-row {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+}
+
+.pr-about-heritage-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.pr-about-stat-num {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 4vw, 5rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1;
+}
+
+.pr-about-stat-lbl {
+    font-family: var(--font-body);
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.35;
+    margin: 0;
+}
+
+.pr-about-pullquote {
+    font-family: var(--font-heading);
+    font-size: clamp(1.1rem, 1.8vw, 1.55rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.3;
+    margin: 0 0 2rem 0;
+    opacity: 0.88;
+    font-style: normal;
+    border-left: 3px solid var(--text-color);
+    padding-left: 1.25rem;
+}
+
+.pr-about-heritage-body {
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    line-height: 1.85;
+    opacity: 0.65;
+    margin-top: auto;
+}
+
+.pr-about-heritage-body p {
+    margin-bottom: 1.25rem;
+}
+
+.pr-about-heritage-divider {
+    width: 3rem;
+    height: 1px;
+    background: rgba(128, 128, 128, 0.3);
+    margin: 1.5rem 0 1rem;
+}
+
+.pr-about-heritage-footnote {
+    font-family: var(--font-body);
+    font-size: 0.58rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    opacity: 0.25;
+    margin: 0;
+}
+
+/* ── ACT III: THE GIANT QUOTE ────────────────────────── */
+.pr-about-act--quote {
+    padding: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+    margin-bottom: 0;
+    overflow: hidden;
+    /* safety: prevent any bleed */
+}
+
+.pr-about-quote-rule {
+    width: 4rem;
+    height: 2px;
+    background: var(--text-color);
+    margin-bottom: 3rem;
+    opacity: 0.2;
+}
+
+.pr-about-giant-quote {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    gap: 0;
+    width: 100%;
+}
+
+.pr-about-gq-line {
+    font-family: var(--font-heading);
+    font-size: clamp(3.5rem, 7vw, 8.5rem);
+    /* contained within content column */
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    line-height: 0.88;
+    color: var(--text-color);
+    display: block;
+    white-space: nowrap;
+}
+
+.pr-about-gq-indent {
+    padding-left: clamp(2rem, 4vw, 5rem);
+}
+
+.pr-about-gq-small {
+    font-size: clamp(2rem, 3.5vw, 4.5rem);
+    padding-left: clamp(4rem, 8vw, 10rem);
+    opacity: 0.45;
+    padding-top: 0.75rem;
+}
+
+.pr-about-quote-attribution {
+    margin-top: 3rem;
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    opacity: 0.3;
+    align-self: flex-end;
+}
+
+/* ── ACT IV: THE SPACE ────────────────────────────────── */
+.pr-about-act--space {
+    /* Override width:100% from .pr-about-act so negative margins can expand the element.
+       calc(100% + 10rem) = content width + left 5rem + right 5rem padding = full stage width */
+    width: calc(100% + 10rem);
+    margin-left: -5rem;
+    /* shift flush left to stage-inner edge */
+    margin-bottom: -8rem;
+    /* cancel bottom padding */
+    min-height: calc(100vh - 5rem);
+    /* always fill the full content viewport */
+    display: flex;
+    flex-direction: column;
+}
+
+.pr-about-space-img-wrap {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    /* stretch to fill the act */
+    min-height: calc(100vh - 5rem);
+    /* at least viewport-tall */
+    overflow: hidden;
+}
+
+.pr-about-space-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(15%) brightness(0.8);
+    transition: filter 1.2s ease, transform 1.2s ease;
+}
+
+.pr-about-space-img-wrap:hover img {
+    filter: grayscale(0%) brightness(0.85);
+    transform: scale(1.02);
+}
+
+.pr-about-space-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right,
+            rgba(0, 0, 0, 0.75) 0%,
+            rgba(0, 0, 0, 0.5) 40%,
+            rgba(0, 0, 0, 0) 70%);
+    display: flex;
+    align-items: flex-end;
+    padding: 4rem;
+}
+
+.pr-about-space-text-block {
+    max-width: 38ch;
+    color: #f7f6f2;
+}
+
+.pr-about-space-label {
+    font-family: var(--font-body);
+    font-size: 0.58rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin: 0 0 1.25rem 0;
+}
+
+.pr-about-space-statement {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 3.5vw, 3.75rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    line-height: 0.92;
+    margin: 0 0 1.75rem 0;
+    color: #f7f6f2;
+}
+
+.pr-about-space-body {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    line-height: 1.75;
+    opacity: 0.65;
+    margin: 0 0 2rem 0;
+    color: #f7f6f2;
+}
+
+.pr-about-space-cta {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #f7f6f2;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(247, 246, 242, 0.4);
+    padding-bottom: 0.25rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, letter-spacing 0.3s ease, border-color 0.3s ease;
+}
+
+.pr-about-space-cta:hover {
+    opacity: 1;
+    letter-spacing: 0.3em;
+    border-color: rgba(247, 246, 242, 0.9);
+}
+
+

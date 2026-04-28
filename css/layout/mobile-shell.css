@@ -1,0 +1,182 @@
+/* Layout: mobile top and bottom app shell */
+
+/* ─── Mobile App Shell (Navigation) ─────────────── */
+
+:root {
+    --mobile-top-bar: 3.5rem;
+    --mobile-bottom-bar: 4.25rem;
+}
+
+@media (max-width: 768px) {
+    /* Hide desktop navbar */
+    .navbar {
+        display: none !important;
+    }
+
+    /* Top Logo Bar */
+    .mobile-top-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(var(--mobile-top-bar) + env(safe-area-inset-top));
+        padding-top: env(safe-area-inset-top);
+        background: var(--bg-color);
+        border-bottom: 1px solid rgba(242, 240, 235, 0.1); /* 10% opacity border */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1202;
+        transform: translateZ(0); /* Hardware accel */
+    }
+
+    .mobile-top-bar .logo-wrapper {
+        font-family: var(--font-heading);
+        font-size: 1.25rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: var(--text-color);
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+
+    .mobile-top-bar .logo-wrapper:focus-visible {
+        outline: 1px solid currentColor;
+        outline-offset: 0.4rem;
+    }
+
+    /* Top Bar Cart Icon */
+    .top-cart-trigger {
+        position: absolute;
+        right: 1rem;
+        top: calc(env(safe-area-inset-top) + (var(--mobile-top-bar) / 2));
+        transform: translateY(-50%);
+        width: 2.9rem;
+        height: 2.2rem;
+        padding: 0;
+        background: rgba(242, 240, 235, 0.06);
+        border: 1px solid rgba(242, 240, 235, 0.18);
+        border-radius: 0;
+        color: var(--text-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background 0.2s ease, border-color 0.2s ease, transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .top-cart-icon {
+        width: 1rem;
+        height: 1rem;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.55;
+        stroke-linecap: square;
+        stroke-linejoin: miter;
+    }
+
+    .top-cart-trigger:hover {
+        background: rgba(242, 240, 235, 0.12);
+        border-color: rgba(242, 240, 235, 0.34);
+    }
+
+    .top-cart-trigger:focus-visible {
+        outline: 1px solid currentColor;
+        outline-offset: 0.28rem;
+    }
+
+    /* Bottom Tab Bar */
+    .mobile-tab-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: calc(var(--mobile-bottom-bar) + env(safe-area-inset-bottom));
+        padding-bottom: env(safe-area-inset-bottom);
+        background: var(--text-color);
+        color: var(--bg-color);
+        display: flex;
+        z-index: 200;
+        transform: translateZ(0);
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+    }
+
+    .mobile-tab {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-heading);
+        font-size: 0.58rem;
+        font-weight: 800;
+        letter-spacing: 0.075em;
+        text-transform: uppercase;
+        color: var(--bg-color);
+        text-decoration: none;
+        opacity: 0.4;
+        transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
+        position: relative;
+    }
+
+    .mobile-tab.active {
+        opacity: 1;
+    }
+
+    .mobile-tab:focus-visible {
+        opacity: 1;
+        outline: 1px solid currentColor;
+        outline-offset: -0.75rem;
+    }
+
+    /* Simulated Haptics */
+    .mobile-tab:active, .top-cart-trigger:active, .logo-wrapper:active {
+        transform: scale(0.94) translateZ(0);
+    }
+
+    /* Top Cart Trigger active needs to keep its Y translation */
+    .top-cart-trigger:active {
+        transform: translateY(-50%) scale(0.94) translateZ(0);
+    }
+
+    .tab-badge {
+        position: absolute;
+        top: calc(50% - 14px);
+        right: 10%;
+        background: #f75555;
+        color: #fff;
+        font-family: var(--font-body);
+        font-size: 0.55rem;
+        font-weight: 600;
+        height: 14px;
+        min-width: 14px;
+        padding: 0 4px;
+        border-radius: 7px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        display: none;
+        pointer-events: none;
+    }
+
+    .top-cart-badge {
+        top: -0.45rem;
+        right: -0.45rem;
+        background: var(--text-color);
+        color: var(--bg-color);
+        border: 1px solid var(--bg-color);
+    }
+
+    .tab-badge.visible {
+        display: flex;
+    }
+
+    /* Base Body padding to clear bars */
+    body {
+        padding-top: calc(var(--mobile-top-bar) + env(safe-area-inset-top));
+        padding-bottom: calc(var(--mobile-bottom-bar) + env(safe-area-inset-bottom));
+    }
+    
+    .home-page {
+        padding-top: 0;
+    }
+}

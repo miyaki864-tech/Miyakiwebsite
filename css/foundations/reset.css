@@ -1,0 +1,53 @@
+/* Foundations: reset and base document */
+
+/* ─── Reset ─────────────────────────────────────── */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    width: 100%;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.home-page {
+    overflow: hidden !important;
+    height: 100vh;
+    height: 100dvh;
+}
+
+a,
+button,
+.hover-target {
+    cursor: pointer;
+}
+
+:focus {
+    outline: none;
+}
+
+:focus-visible {
+    outline: 1px solid currentColor;
+    outline-offset: 0.35rem;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[role="button"]:focus-visible {
+    outline: 1px solid currentColor;
+    outline-offset: 0.35rem;
+}

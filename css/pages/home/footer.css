@@ -1,0 +1,25 @@
+/* Home: subtle studio footer */
+
+/* ─── Subtle Footer Studio Link ─────────────────── */
+.subtle-footer {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 100;
+}
+
+.subtle-login-link {
+    font-size: 0.65rem;
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    opacity: 0.1;
+    color: var(--text-color);
+}
+
+.subtle-login-link:hover {
+    opacity: 0.5;
+}
+

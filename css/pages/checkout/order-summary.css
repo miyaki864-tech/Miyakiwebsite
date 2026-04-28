@@ -1,0 +1,117 @@
+/* Checkout: order summary */
+
+.checkout-flow-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+    gap: clamp(1rem, 3vw, 2rem);
+    align-items: start;
+}
+
+.accordion {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.order-overview {
+    order: 2;
+    position: sticky;
+    top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    padding: clamp(1rem, 2.2vw, 1.35rem);
+    border: 1px solid var(--border-color);
+    background:
+        linear-gradient(145deg, rgba(247, 246, 242, 0.08), rgba(247, 246, 242, 0.025)),
+        rgba(15, 15, 15, 0.62);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(18px);
+}
+
+.summary-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.summary-heading h2 {
+    font-size: clamp(1.05rem, 2vw, 1.35rem);
+    line-height: 1;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.summary-empty {
+    color: var(--muted-color);
+    padding: 1.25rem 0;
+}
+
+.summary-item {
+    display: grid;
+    grid-template-columns: 60px minmax(0, 1fr);
+    gap: 0.85rem;
+    align-items: center;
+    padding: 0 0 0.75rem;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(247, 246, 242, 0.08);
+}
+
+.summary-item:last-child {
+    margin-bottom: 0;
+}
+
+.summary-item-image {
+    width: 60px;
+    height: 66px;
+    object-fit: cover;
+    background: var(--surface-strong);
+}
+
+.summary-item-copy {
+    min-width: 0;
+}
+
+.summary-item-copy h3 {
+    margin-bottom: 0.25rem;
+    font-size: 0.86rem;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.summary-item-copy p {
+    color: var(--muted-color);
+    font-size: 0.86rem;
+}
+
+.overview-totals {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding-top: 0.25rem;
+}
+
+.overview-pricing {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    color: var(--muted-color);
+    font-size: 0.9rem;
+}
+
+.overview-pricing-total {
+    align-items: baseline;
+    margin-top: 0.25rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-color);
+    font-family: var(--font-heading);
+    font-size: 1.16rem;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+}
+
