@@ -1,4 +1,4 @@
-import { bookEvent, fetchPublicEvents } from '../api.js';
+import { bookEvent, fetchPublicEvents } from '../api.js?v=20260429';
 
 /* ─── Helpers ─────────────────────────────────────── */
 function fmtDate(iso) {
