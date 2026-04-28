@@ -1,4 +1,4 @@
-import { fetchAdminSession, loginAdmin } from './api.js';
+import { fetchAdminSession, loginAdmin } from './api.js?v=20260429';
 
 export async function initLogin() {
     const loginForm = document.getElementById('loginForm');
