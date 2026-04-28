@@ -1,6 +1,6 @@
 import { SlideController } from './ui/slideController.js';
 import { buildStudioHTML, buildAboutHTML } from './templates/archiveTemplates.js';
-import { renderEvents } from './components/eventsModule.js';
+import { renderEvents } from './components/eventsModule.js?v=20260429';
 
 let _activeCategory = 'Studio';
 const CATEGORIES = ['Studio', 'About', 'Events'];
