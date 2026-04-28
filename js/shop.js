@@ -1,10 +1,10 @@
 import { fetchProducts, fetchSeriesMeta } from './api.js?v=20260429';
 import { addToCart } from './cart.js';
 import { CURRENCY_LABEL } from './currency.js';
-import { renderProductGrid } from './components/productCards.js';
-import { closeProductPanel, initProductPanel, openProductPanel } from './components/productPanel.js?v=20260429';
+import { renderProductGrid } from './components/productCards.js?v=20260429-images';
+import { closeProductPanel, initProductPanel, openProductPanel } from './components/productPanel.js?v=20260429-images';
 import { SlideController } from './ui/slideController.js';
-import { escapeHtml, isMobileViewport } from './utils/dom.js';
+import { escapeHtml, isMobileViewport } from './utils/dom.js?v=20260429-images';
 import { getProductIdFromPath } from './utils/productLinks.js?v=20260429';
 
 let _allProducts = [];
