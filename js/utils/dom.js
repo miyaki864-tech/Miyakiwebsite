@@ -18,5 +18,14 @@ export function normalizeAssetPath(value = '') {
     const path = String(value || '').trim();
     if (!path) return '';
     if (/^(?:[a-z][a-z\d+\-.]*:|\/\/)/i.test(path)) return path;
-    return `/${path.replace(/^\/+/, '')}`;
+
+    const cleanPath = path.replace(/^\/+/, '');
+    if (typeof window !== 'undefined' && window.location.hostname.endsWith('github.io')) {
+        const firstPathSegment = window.location.pathname.split('/').filter(Boolean)[0];
+        const projectBase = firstPathSegment ? `/${firstPathSegment}` : '';
+        if (projectBase && cleanPath.startsWith(`${firstPathSegment}/`)) return `/${cleanPath}`;
+        return `${projectBase}/${cleanPath}`;
+    }
+
+    return `/${cleanPath}`;
 }
