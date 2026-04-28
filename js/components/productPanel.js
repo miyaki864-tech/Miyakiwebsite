@@ -1,7 +1,7 @@
 import { addToCart } from '../cart.js';
 import { formatCurrency } from '../currency.js';
 import { buildProductSharePath } from '../utils/productLinks.js?v=20260429';
-import { isMobileViewport, normalizeAssetPath } from '../utils/dom.js';
+import { isMobileViewport, normalizeAssetPath } from '../utils/dom.js?v=20260429-images';
 
 const DEFAULT_DESCRIPTION = 'A meticulously crafted piece from the Miyaki studio - where Japanese wabi-sabi philosophy meets contemporary form. Each piece is individually hand-thrown and fired, ensuring no two are identical.';
 const DIMENSIONS_FALLBACK = 'Dimensions not specified yet.';
