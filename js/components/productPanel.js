@@ -16,8 +16,13 @@ export function closeProductPanel() {
     panel?.classList.remove('active');
     overlay?.classList.remove('active');
 
-    if (window.location.pathname.startsWith('/product/')) {
-        window.history.pushState({}, '', '/shop.html');
+    const hasProductQuery = new URLSearchParams(window.location.search).has('product');
+    if (window.location.pathname.startsWith('/product/') || hasProductQuery) {
+        const firstPathSegment = window.location.hostname.endsWith('github.io')
+            ? window.location.pathname.split('/').filter(Boolean)[0]
+            : '';
+        const shopPath = firstPathSegment ? `/${firstPathSegment}/shop.html` : '/shop.html';
+        window.history.pushState({}, '', shopPath);
     }
 }
 
