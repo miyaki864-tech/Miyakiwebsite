@@ -1,5 +1,5 @@
 import { formatCurrency, parseCurrency } from './currency.js';
-import { escapeHtml, normalizeAssetPath } from './utils/dom.js';
+import { escapeHtml, normalizeAssetPath } from './utils/dom.js?v=20260429-images';
 
 export function initCart() {
     const cartToggle  = document.getElementById('cart-toggle');
