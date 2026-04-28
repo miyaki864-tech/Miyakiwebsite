@@ -1,5 +1,5 @@
 import { getCart } from './cart.js';
-import { createOrder } from './api.js';
+import { createOrder } from './api.js?v=20260429';
 import { CURRENCY_CODE, formatCurrency, parseCurrency } from './currency.js';
 
 const CHECKOUT_STEPS = ['step-contact', 'step-shipping', 'step-payment'];
