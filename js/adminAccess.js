@@ -1,4 +1,4 @@
-import { loginAdmin } from './api.js';
+import { loginAdmin } from './api.js?v=20260429';
 
 const SECRET_WORD = 'miyaki';
 
