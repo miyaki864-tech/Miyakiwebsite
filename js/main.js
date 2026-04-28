@@ -1,7 +1,7 @@
-import { initCart } from './cart.js';
+import { initCart } from './cart.js?v=20260429-images';
 import { initAnimations } from './animations.js';
-import { initShop } from './shop.js?v=20260429';
-import { initAdmin } from './admin.js?v=20260429';
+import { initShop } from './shop.js?v=20260429-images';
+import { initAdmin } from './admin.js?v=20260429-images';
 import { initLogin } from './login.js?v=20260429';
 import { initCheckout } from './checkout.js?v=20260429';
 import { initArchive } from './archive.js?v=20260429';
