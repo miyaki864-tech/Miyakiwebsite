@@ -1,4 +1,4 @@
-import { STATIC_EVENTS, STATIC_PRODUCTS, STATIC_SERIES_META } from './staticData.js';
+import { STATIC_EVENTS, STATIC_PRODUCTS, STATIC_SERIES_META } from './staticData.js?v=20260429';
 
 const API_BASE = '/api';
 
