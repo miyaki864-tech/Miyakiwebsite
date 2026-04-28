@@ -1,5 +1,5 @@
 import { formatCurrency } from '../currency.js';
-import { escapeHtml, normalizeAssetPath } from '../utils/dom.js';
+import { escapeHtml, normalizeAssetPath } from '../utils/dom.js?v=20260429-images';
 
 export function getBentoClass(index) {
     const mod = index % 7;
