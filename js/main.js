@@ -1,15 +1,15 @@
 import { initCart } from './cart.js';
 import { initAnimations } from './animations.js';
-import { initShop } from './shop.js';
-import { initAdmin } from './admin.js';
-import { initLogin } from './login.js';
-import { initCheckout } from './checkout.js';
-import { initArchive } from './archive.js';
+import { initShop } from './shop.js?v=20260429';
+import { initAdmin } from './admin.js?v=20260429';
+import { initLogin } from './login.js?v=20260429';
+import { initCheckout } from './checkout.js?v=20260429';
+import { initArchive } from './archive.js?v=20260429';
 import { initMobileNav } from './mobileNav.js';
 import { initTracking } from './tracking.js';
 import { initKeyboardNavigation } from './keyboardNavigation.js';
 import { injectCartShell } from './components/cartShell.js';
-import { initArchiveAdminAccess, initShopAdminAccess } from './adminAccess.js';
+import { initArchiveAdminAccess, initShopAdminAccess } from './adminAccess.js?v=20260429';
 
 function getPageKey(pathname) {
     if (pathname.startsWith('/product/')) return 'shop';
