@@ -1,3 +1,5 @@
+import { STATIC_EVENTS, STATIC_PRODUCTS, STATIC_SERIES_META } from './staticData.js';
+
 const API_BASE = '/api';
 
 async function requestJson(path, options = {}) {
@@ -42,8 +44,8 @@ export async function fetchProducts() {
         const { data = [] } = await requestJson('/products');
         return data;
     } catch (error) {
-        console.error('fetchProducts:', error);
-        return [];
+        console.warn('fetchProducts: using static storefront data', error);
+        return STATIC_PRODUCTS;
     }
 }
 
@@ -100,8 +102,8 @@ export async function fetchPublicEvents() {
         const { data = [] } = await requestJson('/events');
         return data;
     } catch (error) {
-        console.error('fetchPublicEvents:', error);
-        return [];
+        console.warn('fetchPublicEvents: using static events data', error);
+        return STATIC_EVENTS;
     }
 }
 
@@ -128,8 +130,8 @@ export async function fetchSeriesMeta() {
         const data = await requestJson('/series-meta');
         return data; // Array of { name, description }
     } catch (error) {
-        console.error('fetchSeriesMeta:', error);
-        return [];
+        console.warn('fetchSeriesMeta: using static series data', error);
+        return STATIC_SERIES_META;
     }
 }
 
