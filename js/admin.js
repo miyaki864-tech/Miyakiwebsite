@@ -11,7 +11,7 @@ import {
     updateOrderStatus,
     updateProduct,
     uploadProduct,
-} from './api.js';
+} from './api.js?v=20260429';
 import { formatCurrency } from './currency.js';
 import { escapeHtml } from './utils/dom.js';
 
