@@ -13,7 +13,7 @@ import {
     uploadProduct,
 } from './api.js?v=20260429';
 import { formatCurrency } from './currency.js';
-import { escapeHtml } from './utils/dom.js';
+import { escapeHtml } from './utils/dom.js?v=20260429-images';
 
 const VIEW_KEYS = ['inventory', 'collections', 'orders', 'events', 'form'];
 
